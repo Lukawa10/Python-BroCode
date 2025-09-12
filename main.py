@@ -257,13 +257,594 @@
 
 # indexing = accessing elements of a sequence using[] (indexing operator)   [start : end : step]
 
-creditcard_numeber = "1234-5678-9012-3456"
+# creditcard_numeber = "1234-5678-9012-3456"
 
-# print(creditcard_numeber[0])
-# print(creditcard_numeber[:4])
-# print(creditcard_numeber[5:9])
-# print(creditcard_numeber[5:])
-# print(creditcard_numeber[-1])
+# # print(creditcard_numeber[0])
+# # print(creditcard_numeber[:4])
+# # print(creditcard_numeber[5:9])
+# # print(creditcard_numeber[5:])
+# # print(creditcard_numeber[-1])
+
+
+# print("Hello")
+
+# while loop = execute some code WHILE some condition remains true
+
+# name = input("Enter your name:  ")
+
+# while name == "":
+#     print("You did not enter your name")
+#     name = input("Enter your name:  ")
+# print(f"Hello {name}")
+
+# age = int(input("Enter your age: "))
+
+# while age < 0:
+#     print("Age can't be negative")
+#     age = int(input("Enter your age: "))
+
+# print(f"You are {age} years old")
+
+# food = input("Enter a food you like (q to quit):  ")
+
+# while not food == "q":
+#     print(f"You like {food}")
+#     food = input("Enter another food you like (q to quit):  ")
+
+# print("bye")
+
+# num = int(input("Enter a # between 1 - 10:  "))
+
+# while num < 1 or num > 10:
+#     print(f"{num} is not valid")
+#     num = int(input("Enter a # between 1 - 10:  "))
+
+# print(f"Your number is {num}")
+
+# Python compound intereset calculator ซึ่งไม่สามารถใส่ค่า 0 ได้ ในเครื่องคิดเลข
+
+# principle = 0
+# rate = 0
+# time = 0
+
+# while principle <= 0:
+#     principle = float(input("Enter the priniciple amount: "))
+#     if principle < 0:
+#         print("Priniciple can't be less than or equal to zero")
+
+# while rate <= 0:
+#     rate = float(input("Enter the interest rate: "))
+#     if rate < 0:
+#         print("Interest rate can't be less than or equal to zero")
+
+# while time <= 0:
+#     time = int(input("Enter the time in years: "))
+#     if time < 0:
+#         print("Time can't be less than or equal to zero")
+
+# total = principle * pow((1 + rate / 100), time)
+# print(f"Balance after {time}m year/s: ${total:.2f}")
+
+# Python compound intereset calculator อันนี้สามารถใส่ค่า 0 ได้ ในเครื่องคิดเลข
+
+# principle = 0
+# rate = 0
+# time = 0
+
+# while True:
+#     principle = float(input("Enter the priniciple amount: "))
+#     if principle < 0:
+#         print("Priniciple can't be less than zero")
+#     else:
+#         break
+
+# while True:
+#     rate = float(input("Enter the interest rate: "))
+#     if rate < 0:
+#         print("Interest rate can't be less than zero")
+#     else:
+#         break
+# while True:
+#     time = int(input("Enter the time in years: "))
+#     if time < 0:
+#         print("Time can't be less than zero")
+#     else:
+#         break
+
+# total = principle * pow((1 + rate / 100), time)
+# print(f"Balance after {time}m year/s: ${total:.2f}")
+
+# for loop = execute a block of code a fixed number of times. You can iterate over a range, string, sequence, etc.
+#ใช้เกี่ยวกับ loop ที่เป็น fixed number of times
+
+# for x in range(1, 11):
+    # print(x)
+
+
+# for x in range(1, 11, 2):
+#     print(x)
+
+# print("HAPPY NEW YEAR!")
+
+# for x in range(1,21): ข้ามเลข 13
+#     if x == 13:
+#         continue
+#     else:
+#         print(x)
+
+# for x in range(1,21): หยุดที่เลย 13
+#     if x == 13:
+#         break
+#     else:
+#         print(x)
+
+##import time ใช้สร้าง countdown timer
+
+# import time
+# time.sleep(3)
+
+# print("TIME'S UP!")
+
+# my_time = int(input("Enter the time in seconds: "))
+
+# for x in range(my_time, 0, -1):
+#     seconds = x % 60 # % is the modulus operators gives you the remainder of any division
+#     minutes = int(x / 60) % 60
+#     hours = int(x / 3600) 
+#     print(f"{hours:02}:{minutes:02}:{seconds:02}")
+#     time.sleep(1)
+
+# print("TIME'S UP!")
+
+# nested loop = A loop within/inside of another loop (outer, inner)
+#outer loop:
+#   inner loop:
+
+# for x in range(3):
+#     for y in range(1, 10):
+#         print(y, end="")
+
+# for x in range(3):
+#     for y in range(1, 10):
+#         print(y, end="")  ##end="" to make the code end in the same line with empthy string
+#     print()    ## print a new line then repeat it all over again until the outer loop is satisfied
 
 
 
+# rows = int(input("Enter the # of rows: "))  ##จำนวนรอบที่ line จะซ้ำกันของ outer loop or rows
+# columns = int(input("Enter the # of columns: "))  ##in charge of columns
+# symbol = input("Enter a symbol to use: ")
+
+
+# for x in range(rows):
+#     for y in range(columns):
+#         print(symbol, end="")
+#     print()
+
+
+# collection = single "variable" used to store mulitple values
+# List = [] ordered and changealbe. Duplicates OK
+# Set = {} unordered and immutable, but Add/ Remove OK. NO duplicates
+# Tuple = () ordered and unchangeable. Duplicates OK. FASTER
+
+# fruits = ["apple", "orange", "banana", "coconut"]  ## this is List that are ordered and changealbe Duplicates OK
+# print(dir(fruits))
+# print(help(fruits))
+# print(len(fruits))
+# print("pineapple" in fruits)
+
+# fruits[1] = "pineapple"
+# fruits.append("pineapple")     ##to add an element to the end of a list
+# fruits.remove("apple")         ## to remove an element
+# fruits.insert(2, "pineapple")  ## to insert value at the given index
+# fruits.sort()                  ##to sort the list of element in an alphabet order
+# fruits.reverse()               ## to reverse based on what we place them
+# fruits.clear()                 ## clear all elements
+# print(fruits.index("orange"))
+# print(fruits.count("banana"))
+
+
+# print(fruits)
+# for fruit in fruits:
+    # print(fruit)
+
+# fruits = {"apple", "orange", "banana", "coconut", "coconut"}  ## this is Set the set is unordered from originally, but Add/ Remove OK. NO duplicates
+# print(dir(fruits))
+# print(help(fruits))
+# print(len(fruits))
+# print("pineapple" in fruits)
+
+# fruits.add("pineapple")
+# fruits.remove("apple")
+# fruits.pop()    ## will remove whatever element is first which is also randomly select to be first to remove
+# fruits.clear()  ## clear all elements
+
+
+# print(fruits)
+
+# fruits = ("apple", "orange", "banana", "coconut", "coconut")
+# print(dir(fruits))
+# print(help(fruits))
+# print(len(fruits))
+# print("pineapple" in fruits)
+
+# print(fruits.index("banana"))
+# print(fruits.count("coconut"))
+
+# print(fruits)
+# for fruit in fruits:
+    # print(fruit)
+
+
+
+
+
+# Shopping cart program
+
+# List = [] ordered and changealbe. Duplicates OK
+# Set = {} unordered and immutable, but Add/ Remove OK. NO duplicates
+# Tuple = () ordered and unchangeable. Duplicates OK. FASTER
+
+# foods = []
+# prices = []
+# total = 0
+
+# while True:
+#     food = input("Enter a food to buy (q to quit): ")
+#     if food.lower() == "q":                        # พอเราเพิ่ม .lower มา this will make our input make it lowercase ทันที automatic
+#         break
+#     else: 
+#         price = float(input(f"Enter the price of a {food}:  $"))
+#         foods.append(food)
+#         prices.append(price)
+    
+# print("----- YOUR CART -----")
+
+# for food in foods:
+#     print(food, end=" ")   ##พอมี end=" " to make the code end in the same line with one space gap
+
+# for price in prices:
+#     total += price       ## += coming from, total = total + price
+
+# print()  ##print() is using for making a new row of line
+# print(f"Your total is: ${total}")
+
+
+
+
+
+
+
+# #2D list is a list made up of list, its useful when you need matrix of data(kinda like excel spreadsheet)
+# # First we create a lists that each lists is a one-dimensional list, to create a two-dimensional list.
+# #we also need to lay out the list to make it similar/resembles a row of the matrix and each element similar/resembles to a column
+# fruits =     ["apple", "orange", "banana", "coconut"]
+# vegetables = ["celery", "carrots", "potatoes"]
+# meats =      ["chicken", "fish", "turkey"]
+
+# #to create a two-dimensional list, you would begin by creating a one-dimensional list.
+# #Let's create a list of groceries, by add all our individual lists as elements to the outer list(the 2D list)
+# groceries = [fruits, vegetables, meats]
+
+# print(groceries[0])     #this, print(groceries[0]), will return the entire first row instead of first element
+# print(groceries[0][0])  # ex this, print(groceries[1][0]) is to specific to a first element in the second row the matrix
+
+# #we can even do this instead too
+# groceries = [["apple", "orange", "banana", "coconut"], 
+#              ["celery", "carrots", "potatoes"], 
+#              ["chicken", "fish", "turkey"]]
+# print(groceries[0][0]) 
+
+
+# ##if you ever need to iterate/ทำซ้ำ over the elements of a 2D, you can use nested loops.
+# groceries = [["apple", "orange", "banana", "coconut"], 
+#              ["celery", "carrots", "potatoes"], 
+#              ["chicken", "fish", "turkey"]]
+# ##using a single for loop would iterate/ทำซ้ำ over the rows 
+# # for collection in groceries:    
+# #     print(collection)
+# ##but to also iterate/ทำซ้ำ over the elements found within each row, we nested loop!! (aka for and for) to iterate/show over all elements in 2d list
+# for collection in groceries:    
+#     for food in collection:
+#         print(food, end=" ")    ##พอมี end=" " to make the code end in the same line with one space gap
+#     print()     ##print() is using for making a new row of line
+
+##not only just for list[] but we also can tuple() too or set{}        # List = [] ordered and changealbe. Duplicates OK
+                                                                       # Set = {} unordered and immutable, but Add/ Remove OK. NO duplicates
+                                                                       # Tuple = () ordered and unchangeable. Duplicates OK. FASTER
+
+##exercise create 2d keypad on your phone, we need to use ordered number so tuple or list?, answer we use tuple
+## tuple because is ordered and unchangeable
+#create 2d tuple
+# num_pad =((1, 2, 3),
+#           (4, 5, 6),
+#           (7, 8, 9),
+#           ("*", 0, "#"))  ##now num_pad is a 2d tuple, lets use it to iterate over every row
+# # for row in num_pad:
+# #     print(row)  ##printing every row in our numpad 
+# ##but we want to remove () aka parenthesis so we use nested loop!!
+# for row in num_pad:
+#     for num in row:
+#         print(num, end=" ")
+#     print()
+
+
+#ทวนความจำ!!!!!
+#  nested loop = A loop within/inside of another loop (outer, inner)
+#       outer loop:
+#           inner loop:
+
+#        for x in range(3):
+#           for y in range(1, 10):
+#               print(y, end="")
+#            print()
+
+
+
+
+
+
+
+# #create quiz game in python
+
+# questions = ("How many elements are in the periodic table?: ",
+#              "Which animal lays the largest eggs?: ",
+#              "What is the most abundant gas in Earth's atmosphere?: ",
+#              "How many bones are in the human body?: ",
+#              "Which planet in the solar system is the hottest?: ")
+
+# options = (("A. 116", "B. 117", "C. 118", "D. 119"),
+#            ("A. Whale", "B. Crocodile", "C. Elephant", "D. Ostrich"),
+#            ("A. Nitrogen", "B. Oxygen", "C. Carbon-Dioxide", "D. Hydrogen"),
+#            ("A. 206", "B. 207", "C. 208", "D. 209"),
+#            ("A. Mercury", "B. Venus", "C. Earth", "D. Mars"))
+
+# answers = ("C", "D", "A", "A", "B")         # a tuple storing the correct answers
+# guesses = []                                #stores all the user’s answers.
+# score = 0                                   #starts the user’s score at zero and increases with each correct answer.
+# question_num = 0                            #keeps track of the current question number being checked.
+
+# ##First display each question. By iterate over tupple of questions.
+# for question in questions:
+#     print("----------------------")
+#     print(question)
+#     for option in options[question_num]:            #after we display every questions, we need to display every options. 
+#         print(option)                               #option is a 2D tupple, so we need to add index operator (question_num = 0)
+#         #but we need to have each specific options for each questions
+#     #and before we iterating the question number, we will ask the user for the guess first!!!!!!
+#     guess = input("Enter(A, B, C, D): ").upper()                          # .upper() is to make user input uppercase
+#     guesses.append(guess)                          ##guesses.append(guess) adds the user’s current answer (guess) to the end of the guesses list, which stores all the player’s answers.
+#     if guess == answers[question_num]:                     #since answers = ("C", "D", "A", "A", "B") then "question_num" keeps track of the current question 
+#         score += 1                                         #, so for the first question (question_num = 0) it checks answers[0], for the second (question_num = 1) it checks answers[1], and so on.
+#         print("CORRECT!")
+#     else:
+#         print("INCORRECT!")
+#         print(f"{answers[question_num]} is the correct answer")
+#     question_num += 1                                   #It’s shorthand for, question_num = question_num + 1
+
+# #Once we complete all the questions, Let's print the result!
+# print("----------------------")
+# print("        RESULT        ")  #ส่วนนี้ไม่จำเป็นแค่เท่
+# print("----------------------")
+
+# print("answers:, ", end="")
+# for answer in answers:
+#     print(answer, end=" ")
+# print()
+
+# print("guesses:, ", end="")
+# for guess in guesses:
+#     print(guess, end=" ")
+# print()
+
+# score = int(score / len(questions) * 100)
+# print(f"Your score is: {score}%")
+
+
+
+
+
+# # dictionary = a collection of {key:value} pairs ordered and changeable. No duplicates allow
+# # dictionary is one of the four basic collection types for beginners. example for {key:value} could be an ID and Name, an item and a price.
+
+# # but today we create a dictionary of countries and capitals city!
+# capitals = {"USA": "Washington D.C.",               # we {"key":"value of the key"}       # we use set{}
+#             "India": "New Delhi",
+#             "China": "Beiging",
+#             "Russia": "Moscow"}                                                   # List = [] ordered and changealbe. Duplicates OK"
+#                                                                                   # Set = {} unordered and immutable, but Add/ Remove OK. NO duplicates
+#                                                                                   # Tuple = () ordered and unchangeable. Duplicates OK. FASTER
+# # print(dir(capitals))  
+# # print(help(capitals))                                                                                  
+
+# # Now to get one of the values from a dictionary, you would get the key. By type     .get("of the key value")
+# # print(capitals.get("USA"))     #we will get Washington D.C. as we already put the vaule in the set{}
+# # print(capitals.get("India"))     #we will get New Delhi as we already put the vaule in the set{}
+
+# # if capitals.get("Japan"):               # Since Japan is not in our dicitionary, as we did not put Japan as a key in the set{}
+# #     print("That capital exists")          
+# # else:
+# #     print("That capital doesn't exist")
+    
+# # if capitals.get("Russia"):               # Since Russia is in our dicitionary, as we put Russia as a key in the set{}
+# #     print("That capital exists")          
+# # else:
+# #     print("That capital doesn't exist")
+
+# #Now we will update our dicitonary
+# # capitals.update({"Germany": "Berlin"})       # using .update method we can insert a new key value pair 
+# # capitals.update({"USA": "Detroit"})             # or we can update/change the existing one in the list of dictionary  
+# # capitals.pop("China")                        # use .pop method to remove a key value pair
+# # capitals.popitem()                         #this will remove the lateset key value pair in the list
+# # capitals.clear()                            # .clear is to clear everthing in the dictionary list
+# # print(capitals)
+
+# #to get all of the keys within the dictionary but not the value we use .keys method
+# # keys = capitals.keys()
+
+# # print(keys)         # the .keys method will return all of the keys within our dicitionary, as keys is an object which resembles a list
+
+# #if you need the keys in a dictionary with a for loop as they're iterable
+# # keys = capitals.keys()
+
+# # for key in capitals.keys():     #for loop
+# #     print(key)
+
+# # there is also value method to get all values in a dictionary list by using .values method
+# # values = capitals.values()
+# # print(values)
+
+# # now use the for loop to iterate and print over every value within our dictionary
+# # for value in capitals.values():
+# #     print(value)
+
+# # item method
+# # items = capitals.items()
+# # print(items)
+# #items will returns a dictionary object which resembles of a 2D list of tupple. aka [(), (), ()] 
+ 
+# # and we use for loop to print every key, value in capitals.items():
+# for key, value in capitals.items():
+#     print(f"{key}: {value}")
+# ## then we get 
+# # USA: Washington D.C.
+# # India: New Delhi
+# # China: Beiging
+# # Russia: Moscow
+
+
+
+
+
+
+# # we will create a program to mimic a concession stand (ซุ้มขายอาหาร/เครื่องดื่ม)
+# #we will utilizing a dixtionary to keep tack of a menu item and an associated price
+# # dictionary {key:value}
+
+# # first create dictionary named it menu
+# menu = {"pizza": 3.00,
+#         "nachos": 4.50,
+#         "popcorn": 6.00,
+#         "fries": 2.50,
+#         "chips": 1.00,
+#         "pretzel": 3.50,
+#         "soda": 3.00,
+#         "lemonade": 4.25,}
+# # now we have menu, so user going to select specific keys from this menu
+# # depending on what the key is, we can get the associated value to calculate a total.
+
+# cart = []    # So to keep track of the user selected item, we will create an empty list named cart.
+# total = 0    # we also declare a variable named total to keep track of the total.
+
+
+# # we need to lay this dictionary down flat to display to the user by use for loop plus .item method
+# print("-------- MENU --------")       #to decorate menu
+# for key, value in menu.items():       # since .item method of our dictionary will returna key and a value during each iteration
+#     print(f"{key:10}: ${value:.2f}")      # :10 is to allocate 10 spaces to จัดระเบียบ, while .2f is to display two decimal
+# print("----------------------")       #to decorate menu
+
+
+# #now we will ask a user for some input, what item would they like to buy from the menu?
+
+# # while loop aka. while True: loop is an infinite loop — it keeps running forever unless you use a break statement (or stop the program).
+# while True:           #while our condition will be true, if our condition is set to true, we'll need to break out of this loop 
+#     food = input("Select an item (q to quit): ").lower()       #we will Keeps asking the user to pick something by write the input
+#     if food == "q":                                            # .lower()  is to make all user input and make it all lowercase
+#         break                 #If the user types q, the loop stops.
+#     elif menu.get(food) is not None:      #this is Step: Check and add item, menu.get(food) checks if the item is in the dictionary.
+#         cart.append(food)                 #If it exists, the item goes into the cart list.
+    
+# print("----- YOUR ORDER -----") 
+# for food in cart:              #Goes through each food in the cart, and Adds its price to total.
+#     total += menu.get(food)    #total = total + menu.get(food)
+#     print(food, end=" ")
+
+# print()
+# print(f"Total is :${total:.2f}")
+
+
+
+
+
+
+###how we can generate some random numbers in Python and also create the number guessing program
+
+
+# import random  #We need import because random is in a separate module, not built into Python by default.
+
+# #random.randint()   #for random whole integer
+# number = random.randint(1, 6)    #example of six-sided dice for random whole integer
+
+# print(number)
+
+#within the .randint method, you can place variables as well, as long as they contain numbers
+# import random  
+
+# low = 1       # variable 
+# high = 100    # variable
+
+# number = random.randint(low, high)   #so now we have place variables instead of number.
+
+# print(number)
+
+# #if you need a random floating number you can use the .random method
+# import random  
+
+# number = random.random()   #this will return a random floating number between 0 and 1
+
+##in the future we will do a rock paper scissors game by using .choice method
+# import random
+# options = ("rock", "paper", "scissors")
+
+# option = random.choice(options)   #We use .choice method
+
+# print(option)
+
+##shuffle, this time we have a deck of card, so we will use a list
+# import random
+
+# cards = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A",]
+
+# random.shuffle(cards)  #we will use .shuffle method
+# print(cards)  #this will show a deck of cards being shuffled already with new ordered of card
+
+
+
+
+# ###Let's create number guessing game using python
+# import random
+# #we set the range and the answer of the guessing game
+# lowest_num = 1
+# highest_num = 100
+# answer = random.randint(lowest_num, highest_num)         #.randint is for random whole integer
+# guesses = 0    # we need this as we need to keep track number of wrong guesses 
+# is_running = True   #we want the user to keep guessing as long as our application is running
+
+# print("Pythonn Number Guessing Game")
+# print(f"Select a number between {lowest_num} and {highest_num}")
+
+# #we need a while loop to continue the game each round
+# while is_running:   #since we already make is_running a boolean variable aka. true or false (ปกติต้องเป็น while is_running == True)
+
+#     guess = input("Enter your guess: ")
+
+#     if guess.isdigit():  #we use if statement to make sure user put digit number only, by using .isdigit (aka if our guess is digit number (aka ตรงตามที่เราต้องการ))
+#         guess = int(guess)             #if user guess digit we need to convert to a number
+#         guesses += 1 #because we already make one guess
+
+#         if guess < lowest_num or guess > highest_num:
+#             print("That number is out of range")
+#             print(f"Please select a number between {lowest_num} and {highest_num}")
+#         elif guess < answer:          # elif means “else if” → it’s used when you want to check another condition if the previous if was false.
+#             print("Too low! Try again!")
+#         elif guess > answer:
+#             print("Too high! Try again!")
+#         else:     #because we already state all conditions to not be match with the answer, so else is left with only when user guess the correct answer
+#             print(f"CORRECT! the answer was {answer}")
+#             print(f"Number of guesses: {guesses}")
+#             is_running = False    ## to escape the while loop, as we already has correct guess that match answer,
+#                                   ## we will take our boolean variable "is_running" and set that to be Falses to escape.
+
+#     else:       #so if user guess something that is not a digit then it will show "Invalid guess" 
+#         print("Invalid guess")        
+#         print(f"Please select a number between {lowest_num} and {highest_num}")
