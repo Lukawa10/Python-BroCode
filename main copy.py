@@ -1553,239 +1553,46 @@
 
 
 
-
-
 # # module = a file containing code you want to include in your program use 'import' to include a module (built-in or your own)
 # #          useful to break up a large program reusable separate files
 # #example of module, 1.import time, 2.import math, 3.import string
 
 # print(help("modules")) #this is for a list of all the modules found within the standard Python file
 
-# #Ways to import module!
-# import math #to access everything in math module
-# print(math.pi)  #math.variable we want in math
+#Ways to import module!
+import math #to access everything in math module
+print(math.pi)  #math.variable we want in math
 
-# import math as m #this is refer math module as m, so we can reduce the time of spending to type the name module
-# print(m.pi)  #math.variable we want in math
+import math as m #this is refer math module as m, so we can reduce the time of spending to type the name module
+print(m.pi)  #math.variable we want in math
 
-# from math import pi
-# print(pi) #you no longer need module name
-# #However, we should not use this as much because it's could possible of having name conflict
+from math import pi
+print(pi) #you no longer need module name
+#However, we should not use this as much because it's could possible of having name conflict
 
-# #ex of name conflict
-# from math import e #e is an exponential constant
-# #but if we create a program where we have four variables named
-# a, b, c, d, e = 1, 2, 3, 4, 5
-# #So technically we've created another version of e, so we're gonna end up using the second version of e.
-# print(e ** a)
-# print(e ** b)
-# print(e ** c)
-# print(e ** d)
-# print(e ** e)
+#ex of name conflict
+from math import e #e is an exponential constant
+#but if we create a program where we have four variables named
+a, b, c, d, e = 1, 2, 3, 4, 5
+#So technically we've created another version of e, so we're gonna end up using the second version of e.
+print(e ** a)
+print(e ** b)
+print(e ** c)
+print(e ** d)
+print(e ** e)
 
-# #so better use import math
-# import math
-# a, b, c, d, e = 1, 2, 3, 4, 5
+#so better use import math
+import math
+a, b, c, d, e = 1, 2, 3, 4, 5
 
-# print(math.e ** a)
-# print(math.e ** b)
-# print(math.e ** c)
-# print(math.e ** d)
-# print(math.e ** e) #so now there is no conflict between our math.e and our variable e
+print(math.e ** a)
+print(math.e ** b)
+print(math.e ** c)
+print(math.e ** d)
+print(math.e ** e) #so now there is no conflict between our math.e and our variable e
 
-# # Now to create a module 
-# # 1.right click on our project folder
-# # 2.go to "New", and then "Python file" then think of a module name(ex named it "example") then click "Python file"
-# # we'll then have 2 taps, with main.py and example.py
+# Now if create a module 
+# 1.right click on our project folder
+# 2.go to "New", and then "Python file" then think of a module name(ex named it "example") then click "Python file"
+# we'll then have 2 taps, with main.py and example.py
 
-
-
-
-
-
-
-# # variable scope = where a variable is visible and accessible
-# # scope resolution = (LEGB rule) Local -> Enclosed -> Global -> Built-in
-
-# #variable declared within a function have a local scope
-# #function can't see inside of other function ex function 2 has no idea what "a" is 
-
-# #we have 2 functions
-# def func1():
-#     a = 1 #as variable "a" is local to func1 (function 1)
-#     print(a)
-
-# def func2():
-#     b = 2 #as variable "b" is local to func2 (function 2)
-#     print(b)
-
-# #we could create different versions of the same variable
-# func1()
-# func2()
-
-# #same variable of x in both functions
-# def func1():
-#     x = 1 #we have a local version of x found in function 1
-#     print(x)
-
-# def func2():
-#     x = 2 #we have a local version of x found in function 2
-#     print(x)
-
-# func1()
-# func2()
-
-# #So the when we utilized variable, we'll look to see if there any local variable
-# #if there is no local then we'll move to ENCLOSED scope
-# #example of ENCLOSED scope, BUT IT TOO ADVANCE TOPIC DONT TAKE IT SERIOUS
-# func1()
-# func2()
-# def func1():
-#     x = 1 
-
-#     def func2():
-#         x = 2 
-#         print(x)
-#     func2
-
-# func1()
-
-# #GLOBAL scope meaning outside of any functions
-# def func1():
-#     print(x)
-# def func2():
-#     print(x)
-# #we want to declare a global version of x
-# x = 3 #as x is outside of any funcitons
-# func1()
-# func2()
-
-# #if there is local version of x, we'll end up using the local version instead
-# #ex
-# def func1():
-#     x = 1
-#     print(x)
-# def func2():
-#     x = 2
-#     print(x)
-
-# x = 3 #as x is outside of any funcitons
-# func1()
-# func2()
-# ##these will print fucntion x = 1 and 2 instead of 3 and 3(print local before global)
-
-# #Last in order is Built-in
-# from math import e #this is the built-in version of e
-
-# def func1():
-#     print(e)
-
-# e = 3 #this is global version of e
-
-# func1() #so it will print the global version instead of the built-in version of e
-# # scope resolution to find variable to use in function = (LEGB rule) Local -> Enclosed -> Global -> Built-in
-
-
-
-
-
-
-
-
-# if__name__ == __main__: (this script can be imported OR run standalone)
-#                          Functions and classes in this module can be resued
-#                          wihtout the main block of code execute
-
-
-
-
-
-
-
-# Python Banking Program Project
-
-# REMEMBER when create the project, you need to divide it into smaller sections, then do it one at a time.
-# So For Banking Program, 1.Show Balance 2.Deposit 3.Withdraw
-
-### THESE ARE JUST FUNCTIONS to be use in the main code
-# We have 3 functions with our Banking program
-# Show user their Balance
-def show_balance():               ## this function use balance variable!!!
-    print("**********************")
-    print(f"Your balance is ${balance:.2f}") # :.2f is to show two decimal places of balance
-    print("**********************")
-
-# make a Deposit
-def deposit():
-    print("**********************")
-    amount = float(input("Enter an amount to be deposited: ")) #"amount" is a local variable here, and we need float ต้องการดูจำนวนเงินเป็นเลขทศนิยมของ user
-    print("**********************")
-
-    if amount < 0:     #as we don't want user to make a negative deposit.
-        print("**********************")
-        print("That's not a valid amount")
-        print("**********************")
-        return 0 #we have to return something in the if and elif statement!!!
-    else: #the rest is (จำนวนบวกกับ0) ok
-        return amount #this function of deposit() gonna return some amount that is deposited
-# make a Withdraw
-def withdraw():
-    print("**********************")
-    amount = float(input("Enter amount to be withdrawn: ")) #"amount" is a local variable here
-
-#we try to see if the amount of the withdraw
-    if amount > balance: #as user should not be able to withdrawn more than what they have in blance of the bank account
-        print("**********************")
-        print("Insufficient funds")
-        print("**********************")
-        return 0 #we have to return something in the if and elif statement!!!
-    elif amount < 0:  #as we don't want user to make a negative withdraw.
-        print("**********************")
-        print("Amount must be greater than 0")
-        print("**********************")
-        return 0 
-    else: #the rest is (จำนวนบวกกับ0) ok ที่จะ withdraw ถ้าไม่เกินจำนวนเงินใน balance ของ bank acc.
-        return amount #this function of deposit() gonna return some amount that is withdrawed
-
-
-# We also need these VARIABLES...
-balance = 0 #set to be 0, so we can track user balance
-is_running = True # if at any time we set this "is_running" to be False, we'll exit the program
-
-
-### These are the main code of our Program
-# so the majority of our code, we'll place it within while loop.
-while is_running: #we don't need to see if this while is_running == True as we already set is_running is boolean
-    print("**********************")
-    print("Banking Program")
-    print("**********************")
-    print("1.Show Balance")
-    print("2.Deposit")
-    print("3.Withdraw")
-    print("4.Exit")
-    print("**********************")
-
-#after the user see these 4 choices, we'll encouraging a user to type in number 1 through 4 to select options
-    choice = input("Enter your choice (1-4): ") #string input not int() aka interger
-#we'll then need to check to see if the user choice of user is which one by (choice is string)
-    if choice == "1": #string of 1 -> '1'
-        show_balance() ##if choice is 1 we'll call the function to show balance aka show_balance() function
-    elif choice == "2":
-        balance += deposit() ##if choice is 2 we'll call the deposit function
-        #balance += deposit(), balance = balance + deposit(), its update balance by adding the deposit() amount.
-        #so we can use this to update our balance back into balance function in choice 1
-    elif choice == "3":
-        balance -= withdraw() ##if choice is 2 we'll call the withdraw function
-        #balance -= withdraw(), balance = balance - withdraw(), its reduce balance by the withdraw() amount.
-         #so we can also use this to update our balance back into balance function in choice 1
-    elif choice == "4":
-        is_running = False ##to EXIT, we need to exit this while loop, as we set while is_running to be a boolean (we set is_running = True )
-    else:
-        print("**********************")
-        print("That is not a valid choice")
-        print("**********************")
-
-#once we EXIT a while loop (aka exit out of the Banking program running)
-print("**********************")
-print("Thank you! Have a nice day!")
-print("**********************")
